@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import getUsers from '@homework-task/api/users';
 import List from '@homework-task/components/List';
 import ListCard from '@homework-task/components/ListCard';
+import FormWrapper from '@homework-task/form-generator/FormWrapper';
 
 export const Landing: React.FC = () => {
     return (
@@ -87,6 +88,8 @@ export const Landing: React.FC = () => {
                 ItemComponent={ListCard}
                 errorMessage="Failed to fetch users."
             />
+
+            <FormWrapper />
         </section>
     );
 };
