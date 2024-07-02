@@ -1,11 +1,18 @@
+import React from 'react';
+
 import clsx from 'clsx';
 
-import { Card } from './Card.jsx';
+import { Card } from './Card';
 
-// eslint-disable-next-line no-undef
-const vscodeProjectLink = `vscode://file/${__CWD__}`;
+interface CardData {
+    title: string;
+    text: string;
+    link: string;
+}
 
-const cards = [
+const vscodeProjectLink: string = 'vscode://file/${__CWD__}'; // Ensure the template string is used correctly in the actual code.
+
+const cards: CardData[] = [
     {
         title: 'Transfer the project to TypeScript',
         text: 'Your first task involves transitioning this project from JavaScript to TypeScript.',
@@ -18,7 +25,7 @@ const cards = [
     },
     {
         title: 'Create a Form Generator Component',
-        text: 'Build a versatile React component with validation, API hook, and form rendering capabilities. ',
+        text: 'Build a versatile React component with validation, API hook, and form rendering capabilities.',
         link: vscodeProjectLink,
     },
     {
@@ -28,7 +35,7 @@ const cards = [
     },
 ];
 
-export const Landing = () => {
+export const Landing: React.FC = () => {
     return (
         <section
             className={clsx(
@@ -62,14 +69,14 @@ export const Landing = () => {
                         'text-black'
                     )}
                 >
-                    Welcome to Fat Cat&#39;s{' '}
+                    Welcome to Fat Cats{' '}
                     <span className={clsx('text-primary')}>
                         Homework Task Page
                     </span>
                     -where curiosity meets opportunity.
                 </h1>
                 <p className={clsx('text-gray80', 'text-2xl')}>
-                    Don&#39;t hesitate to connect if you have any questions.
+                    Dont hesitate to connect if you have any questions.
                 </p>
                 <a
                     className={clsx(
