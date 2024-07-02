@@ -39,6 +39,9 @@ export default {
             gridTemplateColumns: {
                 landing: 'repeat(2, minmax(0, 832px))',
             },
+            rotate: {
+                '-55': '-55.36deg',
+            },
         },
     },
     plugins: [],
