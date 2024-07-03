@@ -1,144 +1,48 @@
-## Complete the following tasks
+# FatCat Task Project | Radojica Popovic
 
-### Transfer the project to TypeScript
+## Introduction
 
-Your first task involves transitioning this project 
-from JavaScript to TypeScript. To ensure a robust 
-and type-safe codebase, please configure TypeScript
-with the following compiler options:
-* "noImplicitAny": true
-* "strict": true
-* "strictNullChecks": true
-* "noImplicitThis": true
+This repository contains the FatCat Task project, a TypeScript application that showcases dynamic user interface components in React. This project was initially converted from JavaScript to TypeScript to enhance type safety and scalability.
 
-Additionally, implement import aliases in your project
-configuration. Set up your imports to use the format
-***@homework-task/path/to/file.ts***.
+## Key Features
 
-In the ***src/components*** folder, you will find several
-components. Your goal is to enhance these components with
-appropriate TypeScript interfaces and types.
+-   **TypeScript Conversion**: The entire project was migrated from JavaScript to TypeScript to improve maintainability and developer experience.
+-   **List Component**: Implements an API to fetch and display a list of users with details shown in UserCards, sorted by their ID.
+-   **Form Generator**: A scalable and reusable React component with a validation schema, an API post hook, and a callback function for dynamic form rendering based on input schemas.
+-   **Page Generator Component**: This component is designed to dynamically generate web pages based on the props it receives, suitable for various layouts and components.
 
-### Create a List Component
+## Project Structure
 
-Develop a React component that is both scalable and reusable,
-designed to fetch and display data from an API in a list
-format. The specific API endpoint to be used is
-https://jsonplaceholder.typicode.com/users. For each item 
-in the list, ensure that the following keys are displayed:
-***id***, ***name***, ***email***, ***dateOfBirth***, and ***phone***.
+Detailed changes for each phase of the project are documented in `CHANGELOG.md`.
 
+## Setup and Running the Project
 
-### Create a Form Generator Component
+1. **Clone the Repository**:
 
-1. Develop a scalable and reusable React component with the
-following capabilities:
+git clone https://github.com/radojicapopovicdev/radojica-popovic-fatcat-task.git
 
-* **Validation Schema:** Accept a validation schema prop to ensure form data adheres to specified rules.
-* **API Hook Call:** Incorporate an API hook that handles states such as data, isLoading, and isError.
-* **Callback Function for Form Rendering:** Implement a callback function prop (renderForm) that renders the form elements and handles their state appropriately.
+2. **Install Dependencies**:  
+   Navigate to the project directory and run:
 
-2. Component Implementation:
-* Utilize this component to create a form with two fields:
-  * Input Field (‘title’): A required field with a maximum character limit.
-  * Textarea Field (‘body’): Also a required field with a maximum character limit.
-* Both fields should display error messages if the input doesn't meet the criteria set by the validation schema.
-* For form submissions, use the POST method at https://jsonplaceholder.typicode.com/posts.
+npm install
 
-Recommended libraries, but you can use whatever you prefer:
-* ***React Query:*** For handling API calls.
-* ***Zod:*** For defining the validation schema.
-* ***React Hook Form:*** For managing form state, submission, and logic.
+or if you use Yarn:
 
-Alternatively, you're free to use any library or custom solution that aligns with the above requirements.
+yarn install
 
-Component Example **(this does not have to be the exact implementation)**:
+3. **Start the Development Server**:
 
-```tsx
-<CreateForm<ICreateCycleFormInputs>
-    useMutation={useSomeMutation}
-    validationSchema={someSchema}
-    successMessage="Successfully created something"
-    renderForm={({ register, errors }) => (
-        <>
-            <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="name"
-                label="Name"
-                error={!!errors.name}
-                helperText={errors.name?.message}
-                autoFocus
-                {...register('name')}
-            />
-        </>
-    )}
-/>
-```
+npm run dev
 
+This command will start the development server at `http://localhost:3000`.
 
-### Create a Page Generator Component
-Your task is to create a reusable React component for
-building web pages. This component should be designed 
-to handle a variety of page layouts and components 
-dynamically, based on the props it receives.
-* ***Dynamic Layout Handling:*** The component must handle different page layouts.
-* ***Scalability and Reusability:*** It should be easily scalable to accommodate future layout types and be reusable across different pages.
-* ***Prop Structure:*** The main prop is an array of objects, each representing a section of the page with its own layout and components.
-  * Each object in this array contains:
-    * type: identifying the layout type.
-    * components: an array of objects, each describing a component to be rendered in this section.
-    * props: properties specific to that layout (ex. background color)
-  * Each component object has:
-    * type: the type of the component (e.g., 'componentHero').
-    * props: properties specific to that component.
+4. **Additional Scripts**:  
+   Refer to `package.json` for additional scripts that can be used to test, build, or deploy the application.
 
-You can use the components provided in src/components. If you desire, you can 
-add your own components or change the existing ones.
+## Contribution
 
-Here is an example of the props that the component should accept:
+This project is open for contributions. Please refer to `CONTRIBUTING.md` for guidelines on contributing to this project.
 
-```ts
-const data = [
-    {
-        type: 'layoutSection',
-        props: { ...layoutProps},
-        components: [
-            {
-                type: 'componentHero',
-                props: {...componentProps},
-            },
-        ],
-    },
-    {
-        type: 'layoutSection',
-        props: { ...layoutProps},
-        components: [
-            {
-                type: 'componentItemsShowcase',
-                props: {...componentProps},
-            },
-            {
-                type: 'componentTrustBar',
-                props: {...componentProps},
-            },
-        ],
-    },
-];
+## License
 
-```
-
-### Additional Requirements
-You will have to complete all of these for your task to be considered done.
-
-* Follow the eslint and prettier rules set by the project; you must not use any ts-ignore or disable eslint.
-* It must contain a Readme.md file that has instructions on how to run the project as well as a brief explanation of how you have implemented these features. In the project, there is already a Readme.md file present feel free to override it completely.
-* Your code must follow the latest rules and conventions
-* You have to have checks for typescript and eslint that disallow you to commit any changes that cause errors.
-* There should be no TypeScript or Eslint errors in your code.
-* Feel free to add your own touch to these tasks
-* Keep in mind that you will have to expand upon this solution in the technical interview
-
-
-### Note: You can override this document
+This project is licensed under the MIT License - see the `LICENSE.md` file for details.

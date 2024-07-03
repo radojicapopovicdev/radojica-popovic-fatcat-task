@@ -11,13 +11,14 @@ export const TrustBar: React.FC<TrustBarProps> = ({ images }) => {
         <Marquee>
             {images.map((image) => (
                 <img
+                    width={100}
                     key={image}
                     src={image}
-                    width={100}
-                    className="mx-10"
-                    alt=""
+                    className="mx-10 py-10"
                 />
             ))}
         </Marquee>
     );
 };
+
+export type { TrustBarProps };

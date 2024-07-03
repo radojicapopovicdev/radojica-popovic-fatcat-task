@@ -67,8 +67,10 @@ const FormController = <T, TData, TVariables, TContext>({
             {render(methods)}
             <button
                 type="submit"
-                className={`font-bold py-2 px-4 rounded-3xl w-[180px] h-[44px] text-[#696969] text-base  ${
-                    methods.formState.isValid ? 'bg-[#5655F1]' : 'bg-[#D4D4D4]'
+                className={`font-bold py-2 px-4 rounded-3xl w-[180px] h-[44px]  text-base  ${
+                    methods.formState.isValid
+                        ? 'bg-[#5655F1] text-white'
+                        : 'bg-[#D4D4D4] text-[#696969]'
                 } text-white`}
                 disabled={!methods.formState.isValid}
             >
